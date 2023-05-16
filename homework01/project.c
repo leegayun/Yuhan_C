@@ -12,7 +12,8 @@ int main()
         int input;
 
         if(game_state == 1)
-        {   title_screen();
+        {   game_state = 0;
+            title_screen();
             printf("\n>");
             scanf ("%d",&input);
             if(input == 1)
@@ -82,6 +83,7 @@ int main()
         {
             game_over_screen();
             game_state = 1;
+            game_over = 0;
         }
     }
 
