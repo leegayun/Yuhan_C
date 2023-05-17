@@ -284,6 +284,94 @@ int how_to_play2()
     return 0;
 }
 
+int how_to_play3()
+{
+    int strPrint(const char* string)
+    {
+        char *a;
+        a = (char* )string;
+        printf("%s",a);
+        return 0;
+    }
+
+    char line[530];
+
+    int i = 0;
+    while(i < 70)
+    {
+        line[i] = '@';
+        i = i + 1;
+    }
+
+    for (i = 70; i < 530; i++)  // 나머지 요소를 공백 문자로 초기화
+    {
+        line[i] = ' ';
+    }
+
+    char head[23] = "╭ ◜◝   ◜◝ ╮";
+    for (i = 0; i < 23; i++)  // head 배열 초기화
+    {
+        line[i + 100] = head[i];
+    }
+
+    char face[18] = "(Ꮚ ´ ꒳ ` Ꮚ";
+    for (i = 0; i < 18; i++)  // face 배열 초기화
+    {
+        line[i + 150] = face[i];
+    }
+
+    char leg[24] = "╰◟ ◞ ͜ ◟ ◞╯";
+    for (i = 0; i < 24; i++)  // leg 배열 초기화
+    {
+        line[i + 194] = leg[i];
+    }
+
+    char speech1[49] = "중간중간 스크립트를 넘기고 싶을 땐";
+    for (i = 0; i < 49; i++) 
+    {
+        line[i + 237] = speech1[i]; //여기 꼭 변수명으로 바꿔주는거 잊지말기
+    }
+    
+    char speech2[81] = "별도의 설명이 없을 시, 아무 숫자나 입력하시면 넘어갑니다.";
+    for (i = 0; i < 81; i++) 
+    {
+        line[i + 293] = speech2[i]; //여기 꼭 변수명으로 바꿔주는거 잊지말기
+    }
+
+    for (i = 378; i < 448; i++)  // '@' 출력
+    {   //마지막 인덱스값 +70
+        line[i] = '@';
+    }
+
+    line[71] = '\n';
+    line[72] = '\n';
+    line[73] = '\n';
+    line[123] = '\n';
+    line[167] = '\n';
+    line[219] = '\n'; //몽실이 부분 바로 아래
+    line[220] = '\n';
+    line[221] = '\n';
+    line[222] = '\n';
+    line[287] = '\n';
+    line[374] = '\n';
+    line[375] = '\n';
+    line[376] = '\n';
+    line[377] = '\n';
+    line[378] = '\n';
+    line[529] = '\0';  // line 배열의 끝을 널 문자로 종료
+
+    //공백넣고싶을 때는 시작 라인 숫자 조절.인덱스 값 잘 세야됨 안그러면
+    //이상한거 뜸
+
+    //개행할 때 참고: title_part2를 예시로 인덱스 숫자[12]에다가
+    //시작 라인[248] 더하면 260나오는데 +1한 261이 개행해야할 구간임
+
+    //크기 맞추기
+
+    printf("%s", line);
+    return 0;
+}
+
 int game_start1()
 {
     int strPrint(const char* string)
