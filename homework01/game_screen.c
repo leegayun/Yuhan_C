@@ -10,93 +10,69 @@ int title_screen()
         return 0;
     }
 
+    int printStringToScreen(char* line, const char* str, int strLength, int pos)
+    {
+        int i = 0;
+        for (i = 0; i < strLength; i++)
+        {
+             line[i + pos] = str[i];
+        }
+    }
+
+    int tap(char* line, int strLength, int pos)
+    {
+        line[strLength + pos +1] = '\n';
+    }
+
     char line[530];
 
     int i = 0;
-    while(i < 70)
+    while(i < 66)
     {
         line[i] = '@';
         i = i + 1;
     }
 
-    for (i = 70; i < 530; i++)  // 나머지 요소를 공백 문자로 초기화
+    for (i = 66; i < 530; i++)  // 나머지 요소를 공백 문자로 초기화
     {
         line[i] = ' ';
     }
 
-    char head[23] = "╭ ◜◝   ◜◝ ╮";
-    for (i = 0; i < 23; i++)  // head 배열 초기화
-    {
-        line[i + 100] = head[i];
-    }
+    //***문자열 수 잘 세야됨 안그러면 출력이 안됨..ㅠㅠ (출력 안될 시 참고)***
 
-    char face[18] = "(Ꮚ ´ ꒳ ` Ꮚ";
-    for (i = 0; i < 18; i++)  // face 배열 초기화
-    {
-        line[i + 150] = face[i];
-    }
+    printStringToScreen(line, "╭ ◜◝   ◜◝ ╮", 23, 95);
+    tap(line, 23,95);
+    printStringToScreen(line, "(Ꮚ ´ ꒳ ` Ꮚ", 17, 145);
+    tap(line, 17,145);
+    printStringToScreen(line, "╰◟ ◞ ͜ ◟ ◞╯", 24, 189);
+    tap(line, 24,189);
+    tap(line, 24,190);
+    tap(line, 24,191);
+    printStringToScreen(line, "몽실이와", 12, 244);
+    tap(line, 12,244);
+    printStringToScreen(line, "대화하기 ♥", 16, 284);
+    tap(line, 16,284);
+    tap(line, 16,285);
+    printStringToScreen(line, "1. 게임 시작", 16, 328);
+    tap(line, 16,328);
+    printStringToScreen(line, "2. 게임 방법", 16, 371);
+    tap(line, 16,371);
+    printStringToScreen(line, "3. 게임 종료", 16, 414);
+    tap(line, 16,414);
+    tap(line, 16,415);
+    tap(line, 16,416);
+    tap(line, 16,417);
 
-    char leg[24] = "╰◟ ◞ ͜ ◟ ◞╯";
-    for (i = 0; i < 24; i++)  // leg 배열 초기화
-    {
-        line[i + 194] = leg[i];
-    }
-
-    char title_part1[12] = "몽실이와";
-    for (i = 0; i < 12; i++) 
-    {
-        line[i + 248] = title_part1[i];
-    }
-    
-    char title_part2[16] = "대화하기 ♥";
-    for (i = 0; i < 16; i++)
-    {
-        line[i + 289] = title_part2[i];
-    }
-    
-    char one[16] = "1. 게임 시작";
-    for (i = 0; i < 16; i++)
-    {
-        line[i + 333] = one[i];
-    }
-    char two[16] = "2. 게임 방법";
-    for (i = 0; i < 16; i++)
-    {
-        line[i + 376] = two[i];
-    }
-    char three[16] = "3. 게임 종료";
-    for (i = 0; i < 16; i++)
-    {
-        line[i + 419] = three[i];
-    }
-    
-    for (i = 438; i < 508; i++)  // '@' 출력
+    for (i = 434; i < 500; i++)  // '@' 출력
     {
         line[i] = '@';
     }
 
-    line[71] = '\n';
-    line[72] = '\n';
-    line[73] = '\n';
-    line[123] = '\n';
-    line[167] = '\n';
-    line[219] = '\n';
-    line[220] = '\n';
-    line[261] = '\n';
-    line[306] = '\n';
-    line[307] = '\n';
-    line[350] = '\n';
-    line[393] = '\n';
-    line[436] = '\n';
-    line[437] = '\n';
-    line[438] = '\n';
+    line[67] = '\n';
+    line[68] = '\n';
+    line[69] = '\n';
     line[529] = '\0';  // line 배열의 끝을 널 문자로 종료
 
-    //공백넣고싶을 때는 시작 라인 숫자 조절.인덱스 값 잘 세야됨 안그러면
-    //이상한거 뜸
-
-    //개행할 때 참고: title_part2를 예시로 인덱스 숫자[12]에다가
-    //시작 라인[248] 더하면 260나오는데 +1한 261이 개행해야할 구간임
 
     printf("%s", line);
     return 0;
@@ -112,79 +88,67 @@ int how_to_play()
         return 0;
     }
 
+    int printStringToScreen(char* line, const char* str, int strLength, int pos)
+    {
+        int i = 0;
+        for (i = 0; i < strLength; i++)
+        {
+             line[i + pos] = str[i];
+        }
+    }
+
+    int tap(char* line, int strLength, int pos)
+    {
+        line[strLength + pos +1] = '\n';
+    }
+
     char line[530];
 
     int i = 0;
-    while(i < 70)
+    while(i < 66)
     {
         line[i] = '@';
         i = i + 1;
     }
 
-    for (i = 70; i < 530; i++)  // 나머지 요소를 공백 문자로 초기화
+    for (i = 66; i < 530; i++)  // 나머지 요소를 공백 문자로 초기화
     {
         line[i] = ' ';
     }
 
-    char head[23] = "╭ ◜◝   ◜◝ ╮";
-    for (i = 0; i < 23; i++)  // head 배열 초기화
-    {
-        line[i + 100] = head[i];
-    }
+    //***문자열 수 잘 세야됨 안그러면 출력이 안됨..ㅠㅠ (출력 안될 시 참고)***
 
-    char face[18] = "(Ꮚ ´ ꒳ ` Ꮚ";
-    for (i = 0; i < 18; i++)  // face 배열 초기화
-    {
-        line[i + 150] = face[i];
-    }
+    printStringToScreen(line, "╭ ◜◝   ◜◝ ╮", 23, 96);
+    tap(line, 23,95);
+    printStringToScreen(line, "(Ꮚ ´ ꒳ ` Ꮚ", 17, 145);
+    tap(line, 17,145);
+    printStringToScreen(line, "╰◟ ◞ ͜ ◟ ◞╯", 24, 189);
+    tap(line, 24,189);
+    tap(line, 24,190);
+    tap(line, 24,191);
+    tap(line, 24,192);
+    printStringToScreen(line, "이 친구의 이름은 몽실이에요.", 40,234);
+    tap(line, 40,234);
+    printStringToScreen(line, "당신은 이유는 모르지만, 몽실이와 친해져야 합니다.", 70,284);
+    tap(line, 70,284);
+    tap(line, 70,285);
+    tap(line, 70,286);
+    tap(line, 70,287);
+    tap(line, 70,288);
+    tap(line, 70,289);
+       
 
-    char leg[24] = "╰◟ ◞ ͜ ◟ ◞╯";
-    for (i = 0; i < 24; i++)  // leg 배열 초기화
+    for (i = 360; i < 426; i++)  // '@' 출력
     {
-        line[i + 194] = leg[i];
-    }
-
-    char speech1[40] = "이 친구의 이름은 몽실이에요.";
-    for (i = 0; i < 40; i++) 
-    {
-        line[i + 239] = speech1[i]; //여기 꼭 변수명으로 바꿔주는거 잊지말기
-    }
-    
-    char speech2[70] = "당신은 이유는 모르지만, 몽실이와 친해져야 합니다.";
-    for (i = 0; i < 70; i++) 
-    {
-        line[i + 290] = speech2[i]; //여기 꼭 변수명으로 바꿔주는거 잊지말기
-    }
-
-    for (i = 365; i < 435; i++)  // '@' 출력
-    {   //마지막 인덱스값 +70
         line[i] = '@';
     }
 
-    line[71] = '\n';
-    line[72] = '\n';
-    line[73] = '\n';
-    line[123] = '\n';
-    line[167] = '\n';
-    line[219] = '\n'; //몽실이 부분 바로 아래
-    line[220] = '\n';
-    line[221] = '\n';
-    line[222] = '\n';
-    line[280] = '\n';
-    line[361] = '\n';
-    line[362] = '\n';
-    line[363] = '\n';
-    line[364] = '\n';
-    line[365] = '\n';
+    line[67] = '\n';
+    line[68] = '\n';
+    line[69] = '\n';
+    line[70] = '\n';
     line[529] = '\0';  // line 배열의 끝을 널 문자로 종료
 
-    //공백넣고싶을 때는 시작 라인 숫자 조절.인덱스 값 잘 세야됨 안그러면
-    //이상한거 뜸
-
-    //개행할 때 참고: title_part2를 예시로 인덱스 숫자[12]에다가
-    //시작 라인[248] 더하면 260나오는데 +1한 261이 개행해야할 구간임
-
-    //크기 맞추기
 
     printf("%s", line);
     return 0;
@@ -200,85 +164,144 @@ int how_to_play2()
         return 0;
     }
 
+    int printStringToScreen(char* line, const char* str, int strLength, int pos)
+    {
+        int i = 0;
+        for (i = 0; i < strLength; i++)
+        {
+             line[i + pos] = str[i];
+        }
+    }
+
+    int tap(char* line, int strLength, int pos)
+    {
+        line[strLength + pos +1] = '\n';
+    }
+
     char line[530];
 
     int i = 0;
-    while(i < 70)
+    while(i < 66)
     {
         line[i] = '@';
         i = i + 1;
     }
 
-    for (i = 70; i < 530; i++)  // 나머지 요소를 공백 문자로 초기화
+    for (i = 66; i < 530; i++)  // 나머지 요소를 공백 문자로 초기화
     {
         line[i] = ' ';
     }
 
-    char head[23] = "╭ ◜◝   ◜◝ ╮";
-    for (i = 0; i < 23; i++)  // head 배열 초기화
-    {
-        line[i + 100] = head[i];
-    }
+    //***문자열 수 잘 세야됨 안그러면 출력이 안됨..ㅠㅠ (출력 안될 시 참고)***
 
-    char face[18] = "(Ꮚ ´ ꒳ ` Ꮚ";
-    for (i = 0; i < 18; i++)  // face 배열 초기화
-    {
-        line[i + 150] = face[i];
-    }
+    printStringToScreen(line, "╭ ◜◝   ◜◝ ╮", 23, 96);
+    tap(line, 23,95);
+    printStringToScreen(line, "(Ꮚ ´ ꒳ ` Ꮚ", 17, 145);
+    tap(line, 17,145);
+    printStringToScreen(line, "╰◟ ◞ ͜ ◟ ◞╯", 24, 189);
+    tap(line, 24,189);
+    tap(line, 24,190);
+    tap(line, 24,191);
+    tap(line, 24,192);
+    printStringToScreen(line, "기왕 하는 거 열심히 친해져봅시다!", 47,232);
+    tap(line, 47,232);
+    printStringToScreen(line, "새 친구도 사귀고 좋잖아요.", 37,299);
+    tap(line, 37,299);
+    printStringToScreen(line, "몽실이가 좋아할 것 같은 대답을 골라주며 호감도를 쌓아보아요!", 86,341);
+    tap(line, 86,341);
+    tap(line, 86,342);
+    tap(line, 86,343);
+    tap(line, 86,344);
+    tap(line, 86,345);
+       
 
-    char leg[24] = "╰◟ ◞ ͜ ◟ ◞╯";
-    for (i = 0; i < 24; i++)  // leg 배열 초기화
-    {
-        line[i + 194] = leg[i];
-    }
-
-    char speech1[47] = "기왕 하는 거 열심히 친해져봅시다!";
-    for (i = 0; i < 47; i++) 
-    {
-        line[i + 237] = speech1[i]; //여기 꼭 변수명으로 바꿔주는거 잊지말기
-    }
-    
-    char speech2[37] = "새 친구도 사귀고 좋잖아요.";
-    for (i = 0; i < 37; i++) 
-    {
-        line[i + 304] = speech2[i]; //여기 꼭 변수명으로 바꿔주는거 잊지말기
-    }
-    
-    char speech3[86] = "몽실이가 좋아할 것 같은 대답을 골라주며 호감도를 쌓아보아요!";
-    for (i = 0; i < 86; i++) 
-    {
-        line[i + 347] = speech3[i]; //여기 꼭 변수명으로 바꿔주는거 잊지말기
-    }
-    
-    for (i = 442; i < 512; i++)  // '@' 출력
+    for (i = 432; i < 498; i++)  // '@' 출력
     {
         line[i] = '@';
     }
 
-    line[71] = '\n';
-    line[72] = '\n';
-    line[73] = '\n';
-    line[123] = '\n';
-    line[167] = '\n';
-    line[219] = '\n'; //몽실이 부분 바로 아래
-    line[220] = '\n';
-    line[221] = '\n';
-    line[285] = '\n';
-    line[342] = '\n';
-    line[438] = '\n';
-    line[439] = '\n';
-    line[440] = '\n';
-    line[441] = '\n';
-    line[442] = '\n';
+    line[67] = '\n';
+    line[68] = '\n';
+    line[69] = '\n';
+    line[70] = '\n';
     line[529] = '\0';  // line 배열의 끝을 널 문자로 종료
 
-    //공백넣고싶을 때는 시작 라인 숫자 조절.인덱스 값 잘 세야됨 안그러면
-    //이상한거 뜸
 
-    //개행할 때 참고: title_part2를 예시로 인덱스 숫자[12]에다가
-    //시작 라인[248] 더하면 260나오는데 +1한 261이 개행해야할 구간임
+    printf("%s", line);
+    return 0;
+}
 
-    //크기 맞추기
+int how_to_play3()
+{
+    int strPrint(const char* string)
+    {
+        char *a;
+        a = (char* )string;
+        printf("%s",a);
+        return 0;
+    }
+
+    int printStringToScreen(char* line, const char* str, int strLength, int pos)
+    {
+        int i = 0;
+        for (i = 0; i < strLength; i++)
+        {
+             line[i + pos] = str[i];
+        }
+    }
+
+    int tap(char* line, int strLength, int pos)
+    {
+        line[strLength + pos +1] = '\n';
+    }
+
+    char line[530];
+
+    int i = 0;
+    while(i < 66)
+    {
+        line[i] = '@';
+        i = i + 1;
+    }
+
+    for (i = 66; i < 530; i++)  // 나머지 요소를 공백 문자로 초기화
+    {
+        line[i] = ' ';
+    }
+
+    //***문자열 수 잘 세야됨 안그러면 출력이 안됨..ㅠㅠ (출력 안될 시 참고)***
+
+    printStringToScreen(line, "╭ ◜◝   ◜◝ ╮", 23, 96);
+    tap(line, 23,95);
+    printStringToScreen(line, "(Ꮚ ´ ꒳ ` Ꮚ", 17, 145);
+    tap(line, 17,145);
+    printStringToScreen(line, "╰◟ ◞ ͜ ◟ ◞╯", 24, 189);
+    tap(line, 24,189);
+    tap(line, 24,190);
+    tap(line, 24,191);
+    tap(line, 24,192);
+    printStringToScreen(line, "중간중간 스크립트를 넘기고 싶을 땐", 49,232);
+    tap(line, 49,232);
+    printStringToScreen(line, "별도의 설명이 없을 시, 아무 숫자나 입력하시면 넘어갑니다.", 81,288);
+    tap(line, 81,288);
+    tap(line, 81,289);
+    tap(line, 81,290);
+    tap(line, 81,291);
+    tap(line, 81,292);
+    tap(line, 81,293);
+       
+
+    for (i = 375; i < 441; i++)  // '@' 출력
+    {
+        line[i] = '@';
+    }
+
+    line[67] = '\n';
+    line[68] = '\n';
+    line[69] = '\n';
+    line[70] = '\n';
+    line[529] = '\0';  // line 배열의 끝을 널 문자로 종료
+
 
     printf("%s", line);
     return 0;
@@ -294,79 +317,66 @@ int game_start1()
         return 0;
     }
 
+    int printStringToScreen(char* line, const char* str, int strLength, int pos)
+    {
+        int i = 0;
+        for (i = 0; i < strLength; i++)
+        {
+             line[i + pos] = str[i];
+        }
+    }
+
+    int tap(char* line, int strLength, int pos)
+    {
+        line[strLength + pos +1] = '\n';
+    }
+
     char line[530];
 
     int i = 0;
-    while(i < 70)
+    while(i < 66)
     {
         line[i] = '@';
         i = i + 1;
     }
 
-    for (i = 70; i < 530; i++)  // 나머지 요소를 공백 문자로 초기화
+    for (i = 66; i < 530; i++)  // 나머지 요소를 공백 문자로 초기화
     {
         line[i] = ' ';
     }
 
-    char head[23] = "╭ ◜◝   ◜◝ ╮";
-    for (i = 0; i < 23; i++)  // head 배열 초기화
-    {
-        line[i + 100] = head[i];
-    }
+    //***문자열 수 잘 세야됨 안그러면 출력이 안됨..ㅠㅠ (출력 안될 시 참고)***
 
-    char face[18] = "(Ꮚ ´ ꒳ ` Ꮚ";
-    for (i = 0; i < 18; i++)  // face 배열 초기화
-    {
-        line[i + 150] = face[i];
-    }
+    printStringToScreen(line, "╭ ◜◝   ◜◝ ╮", 23, 96);
+    tap(line, 23,95);
+    printStringToScreen(line, "(Ꮚ ´ ꒳ ` Ꮚ", 17, 145);
+    tap(line, 17,145);
+    printStringToScreen(line, "╰◟ ◞ ͜ ◟ ◞╯", 24, 189);
+    tap(line, 24,189);
+    tap(line, 24,190);
+    tap(line, 24,191);
+    printStringToScreen(line, "[몽실이]", 11,244);
+    tap(line, 11,244);
+    tap(line, 11,245);
+    printStringToScreen(line, "안녕! 난 몽실이야.", 25,280);
+    tap(line, 25,280);
+    tap(line, 25,281);
+    tap(line, 25,282);
+    tap(line, 25,283);
+    tap(line, 25,284);
+    tap(line, 25,285);           
 
-    char leg[24] = "╰◟ ◞ ͜ ◟ ◞╯";
-    for (i = 0; i < 24; i++)  // leg 배열 초기화
+    for (i = 311; i < 377; i++)  // '@' 출력
     {
-        line[i + 194] = leg[i];
-    }
-
-    char name[11] = "[몽실이]";
-    for (i = 0; i < 11; i++) 
-    {
-        line[i + 249] = name[i]; //여기 꼭 변수명으로 바꿔주는거 잊지말기
-    }
-
-    char dialog1[25] = "안녕! 난 몽실이야.";
-    for (i = 0; i < 25; i++) 
-    {
-        line[i + 286] = dialog1[i]; //여기 꼭 변수명으로 바꿔주는거 잊지말기
-    }
-    
-    for (i = 314; i < 384; i++)  // '@' 출력
-    {   //마지막 인덱스값 +70
         line[i] = '@';
     }
 
-    line[71] = '\n';
-    line[72] = '\n';
-    line[73] = '\n';
-    line[123] = '\n';
-    line[167] = '\n';
-    line[219] = '\n'; //몽실이 부분 바로 아래
-    line[220] = '\n';
-    line[221] = '\n';
-    line[261] = '\n';
-    line[262] = '\n';
-    line[263] = '\n'; //name 밑에 공백 두 칸
-    line[311] = '\n';
-    line[312] = '\n';
-    line[313] = '\n';
-    line[314] = '\n';
+    line[67] = '\n';
+    line[68] = '\n';
+    line[69] = '\n';
+    line[70] = '\n';
     line[529] = '\0';  // line 배열의 끝을 널 문자로 종료
 
-    //공백넣고싶을 때는 시작 라인 숫자 조절.인덱스 값 잘 세야됨 안그러면
-    //이상한거 뜸
-
-    //개행할 때 참고: title_part2를 예시로 인덱스 숫자[12]에다가
-    //시작 라인[248] 더하면 260나오는데 +1한 261이 개행해야할 구간임
-
-    //크기 맞추기
 
     printf("%s", line);
     return 0;
@@ -382,86 +392,67 @@ int choice1()
         return 0;
     }
 
+    int printStringToScreen(char* line, const char* str, int strLength, int pos)
+    {
+        int i = 0;
+        for (i = 0; i < strLength; i++)
+        {
+             line[i + pos] = str[i];
+        }
+    }
+
+    int tap(char* line, int strLength, int pos)
+    {
+        line[strLength + pos +1] = '\n';
+    }
+
     char line[530];
 
     int i = 0;
-    while(i < 70)
+    while(i < 66)
     {
         line[i] = '@';
         i = i + 1;
     }
 
-    for (i = 70; i < 530; i++)  // 나머지 요소를 공백 문자로 초기화
+    for (i = 66; i < 530; i++)  // 나머지 요소를 공백 문자로 초기화
     {
         line[i] = ' ';
     }
 
-    char head[23] = "╭ ◜◝   ◜◝ ╮";
-    for (i = 0; i < 23; i++)  // head 배열 초기화
-    {
-        line[i + 100] = head[i];
-    }
+    //***문자열 수 잘 세야됨 안그러면 출력이 안됨..ㅠㅠ (출력 안될 시 참고)***
 
-    char face[18] = "(Ꮚ ´ ꒳ ` Ꮚ";
-    for (i = 0; i < 18; i++)  // face 배열 초기화
-    {
-        line[i + 150] = face[i];
-    }
+    printStringToScreen(line, "╭ ◜◝   ◜◝ ╮", 23, 96);
+    tap(line, 23,95);
+    printStringToScreen(line, "(Ꮚ ´ ꒳ ` Ꮚ", 17, 145);
+    tap(line, 17,145);
+    printStringToScreen(line, "╰◟ ◞ ͜ ◟ ◞╯", 24, 189);
+    tap(line, 24,189);
+    tap(line, 24,190);
+    tap(line, 24,191);
+    printStringToScreen(line, "[몽실이]", 11,244);
+    tap(line, 11,244);
+    tap(line, 11,245);
+    printStringToScreen(line, "반가워 친구야~", 20,282);
+    tap(line, 20,282);
+    printStringToScreen(line, "오늘부터 밥도 같이 먹고 친하게 지내자!", 54,317);
+    tap(line, 54,317);
+    tap(line, 54,318);
+    tap(line, 54,319);
+    tap(line, 54,320);
+    tap(line, 54,321);
 
-    char leg[24] = "╰◟ ◞ ͜ ◟ ◞╯";
-    for (i = 0; i < 24; i++)  // leg 배열 초기화
+    for (i = 376; i < 442; i++)  // '@' 출력
     {
-        line[i + 194] = leg[i];
-    }
-
-    char name[11] = "[몽실이]";
-    for (i = 0; i < 11; i++) 
-    {
-        line[i + 249] = name[i]; //여기 꼭 변수명으로 바꿔주는거 잊지말기
-    }
-
-    char dialog1[20] = "반가워 친구야~";
-    for (i = 0; i < 20; i++) 
-    {
-        line[i + 287] = dialog1[i]; //여기 꼭 변수명으로 바꿔주는거 잊지말기
-    }
-
-    char dialog2[54] = "오늘부터 밥도 같이 먹고 친하게 지내자!";
-    for (i = 0; i < 54; i++) 
-    {
-        line[i + 322] = dialog2[i]; //여기 꼭 변수명으로 바꿔주는거 잊지말기
-    }
-
-    for (i = 380; i < 450; i++)  // '@' 출력
-    {   //마지막 인덱스값 +70
         line[i] = '@';
     }
 
-    line[71] = '\n';
-    line[72] = '\n';
-    line[73] = '\n';
-    line[123] = '\n';
-    line[167] = '\n';
-    line[219] = '\n'; //몽실이 부분 바로 아래
-    line[220] = '\n';
-    line[221] = '\n';
-    line[261] = '\n';
-    line[262] = '\n';
-    line[308] = '\n'; //두 번째 대사 시작
-    line[377] = '\n';
-    line[378] = '\n';
-    line[379] = '\n';
-    line[380] = '\n';
+    line[67] = '\n';
+    line[68] = '\n';
+    line[69] = '\n';
+    line[70] = '\n';
     line[529] = '\0';  // line 배열의 끝을 널 문자로 종료
 
-
-    //공백넣고싶을 때는 시작 라인 숫자 조절.인덱스 값 잘 세야됨 안그러면
-    //이상한거 뜸
-
-    //개행할 때 참고: title_part2를 예시로 인덱스 숫자[12]에다가
-    //시작 라인[248] 더하면 260나오는데 +1한 261이 개행해야할 구간임
-
-    //크기 맞추기 16줄
 
     printf("%s", line);
     return 0;
@@ -477,86 +468,67 @@ int choice2()
         return 0;
     }
 
+    int printStringToScreen(char* line, const char* str, int strLength, int pos)
+    {
+        int i = 0;
+        for (i = 0; i < strLength; i++)
+        {
+             line[i + pos] = str[i];
+        }
+    }
+
+    int tap(char* line, int strLength, int pos)
+    {
+        line[strLength + pos +1] = '\n';
+    }
+
     char line[530];
 
     int i = 0;
-    while(i < 70)
+    while(i < 66)
     {
         line[i] = '@';
         i = i + 1;
     }
 
-    for (i = 70; i < 530; i++)  // 나머지 요소를 공백 문자로 초기화
+    for (i = 66; i < 530; i++)  // 나머지 요소를 공백 문자로 초기화
     {
         line[i] = ' ';
     }
 
-    char head[23] = "╭ ◜◝   ◜◝ ╮";
-    for (i = 0; i < 23; i++)  // head 배열 초기화
-    {
-        line[i + 100] = head[i];
-    }
+    //***문자열 수 잘 세야됨 안그러면 출력이 안됨..ㅠㅠ (출력 안될 시 참고)***
 
-    char face[18] = "(Ꮚ ´ ꒳ ` Ꮚ";
-    for (i = 0; i < 18; i++)  // face 배열 초기화
-    {
-        line[i + 150] = face[i];
-    }
+    printStringToScreen(line, "╭ ◜◝   ◜◝ ╮", 23, 96);
+    tap(line, 23,95);
+    printStringToScreen(line, "(Ꮚ ´ ꒳ ` Ꮚ", 17, 145);
+    tap(line, 17,145);
+    printStringToScreen(line, "╰◟ ◞ ͜ ◟ ◞╯", 24, 189);
+    tap(line, 24,189);
+    tap(line, 24,190);
+    tap(line, 24,191);
+    printStringToScreen(line, "[몽실이]", 11,244);
+    tap(line, 11,244);
+    tap(line, 11,245);
+    printStringToScreen(line, "안녕~", 7,286);
+    tap(line, 7,286);
+    printStringToScreen(line, "(얘 벌써 노잼의 향기가 나는데...)", 45,310);
+    tap(line, 45,310);
+    tap(line, 45,311);
+    tap(line, 45,312);
+    tap(line, 45,313);
+    tap(line, 45,314);
 
-    char leg[24] = "╰◟ ◞ ͜ ◟ ◞╯";
-    for (i = 0; i < 24; i++)  // leg 배열 초기화
+    for (i = 360; i < 426; i++)  // '@' 출력
     {
-        line[i + 194] = leg[i];
-    }
-
-    char name[11] = "[몽실이]";
-    for (i = 0; i < 11; i++) 
-    {
-        line[i + 249] = name[i]; //여기 꼭 변수명으로 바꿔주는거 잊지말기
-    }
-
-    char dialog1[7] = "안녕~";
-    for (i = 0; i < 7; i++) 
-    {
-        line[i + 291] = dialog1[i]; //여기 꼭 변수명으로 바꿔주는거 잊지말기
-    }
-
-    char dialog2[45] = "(얘 벌써 노잼의 향기가 나는데...)";
-    for (i = 0; i < 45; i++) 
-    {
-        line[i + 325] = dialog2[i]; //여기 꼭 변수명으로 바꿔주는거 잊지말기
-    }
-
-    for (i = 380; i < 450; i++)  // '@' 출력
-    {   //마지막 인덱스값 +70
         line[i] = '@';
     }
 
-    line[71] = '\n';
-    line[72] = '\n';
-    line[73] = '\n';
-    line[123] = '\n';
-    line[167] = '\n';
-    line[219] = '\n'; //몽실이 부분 바로 아래
-    line[220] = '\n';
-    line[221] = '\n';
-    line[261] = '\n';
-    line[262] = '\n';
-    line[308] = '\n'; //두 번째 대사 시작
-    line[377] = '\n';
-    line[378] = '\n';
-    line[379] = '\n';
-    line[380] = '\n';
+    line[67] = '\n';
+    line[68] = '\n';
+    line[69] = '\n';
+    line[70] = '\n';
     line[529] = '\0';  // line 배열의 끝을 널 문자로 종료
 
-
-    //공백넣고싶을 때는 시작 라인 숫자 조절.인덱스 값 잘 세야됨 안그러면
-    //이상한거 뜸
-
-    //개행할 때 참고: title_part2를 예시로 인덱스 숫자[12]에다가
-    //시작 라인[248] 더하면 260나오는데 +1한 261이 개행해야할 구간임
-
-    //크기 맞추기 16줄
 
     printf("%s", line);
     return 0;
@@ -572,79 +544,66 @@ int choice3()
         return 0;
     }
 
+    int printStringToScreen(char* line, const char* str, int strLength, int pos)
+    {
+        int i = 0;
+        for (i = 0; i < strLength; i++)
+        {
+             line[i + pos] = str[i];
+        }
+    }
+
+    int tap(char* line, int strLength, int pos)
+    {
+        line[strLength + pos +1] = '\n';
+    }
+
     char line[530];
 
     int i = 0;
-    while(i < 70)
+    while(i < 66)
     {
         line[i] = '@';
         i = i + 1;
     }
 
-    for (i = 70; i < 530; i++)  // 나머지 요소를 공백 문자로 초기화
+    for (i = 66; i < 530; i++)  // 나머지 요소를 공백 문자로 초기화
     {
         line[i] = ' ';
     }
 
-    char head[23] = "╭ ◜◝   ◜◝ ╮";
-    for (i = 0; i < 23; i++)  // head 배열 초기화
-    {
-        line[i + 100] = head[i];
-    }
+    //***문자열 수 잘 세야됨 안그러면 출력이 안됨..ㅠㅠ (출력 안될 시 참고)***
 
-    char face[20] = "(ㅗ ◠ ‿ ◠ ㅗ";
-    for (i = 0; i < 20; i++)  // face 배열 초기화
-    {
-        line[i + 150] = face[i];
-    }
+    printStringToScreen(line, "╭ ◜◝   ◜◝ ╮", 23, 96);
+    tap(line, 23,95);
+    printStringToScreen(line, "(ㅗ ◠ ‿ ◠ ㅗ", 20, 145);
+    tap(line, 20,145);
+    printStringToScreen(line, "╰◟ ◞ ͜ ◟ ◞╯", 24, 192);
+    tap(line, 24,192);
+    tap(line, 24,193);
+    tap(line, 24,194);
+    printStringToScreen(line, "[몽실이]", 11,247);
+    tap(line, 11,247);
+    tap(line, 11,248);
+    printStringToScreen(line, "그럼 꺼져", 13,287);
+    tap(line, 13,287);   
+    tap(line, 13,288);  
+    tap(line, 13,289);  
+    tap(line, 13,290);  
+    tap(line, 13,291);  
+    tap(line, 13,292);  
 
-    char leg[24] = "╰◟ ◞ ͜ ◟ ◞╯";
-    for (i = 0; i < 24; i++)  // leg 배열 초기화
+    for (i = 306; i < 372; i++)  // '@' 출력
     {
-        line[i + 198] = leg[i];
-    }
-
-    char name[11] = "[몽실이]";
-    for (i = 0; i < 11; i++) 
-    {
-        line[i + 249] = name[i]; //여기 꼭 변수명으로 바꿔주는거 잊지말기
-    }
-
-    char dialog1[13] = "그럼 꺼져";
-    for (i = 0; i < 13; i++) 
-    {
-        line[i + 290] = dialog1[i]; //여기 꼭 변수명으로 바꿔주는거 잊지말기
-    }
-    
-    for (i = 314; i < 384; i++)  // '@' 출력
-    {   //마지막 인덱스값 +70
         line[i] = '@';
     }
 
-    line[71] = '\n';
-    line[72] = '\n';
-    line[73] = '\n';
-    line[123] = '\n';
-    line[171] = '\n';
-    line[219] = '\n'; //몽실이 부분 바로 아래
-    line[220] = '\n';
-    line[221] = '\n';
-    line[261] = '\n';
-    line[262] = '\n';
-    line[263] = '\n'; //name 밑에 공백 두 칸
-    line[311] = '\n';
-    line[312] = '\n';
-    line[313] = '\n';
-    line[314] = '\n';
+    line[67] = '\n';
+    line[68] = '\n';
+    line[69] = '\n';
+    line[70] = '\n';
     line[529] = '\0';  // line 배열의 끝을 널 문자로 종료
 
-    //공백넣고싶을 때는 시작 라인 숫자 조절.인덱스 값 잘 세야됨 안그러면
-    //이상한거 뜸
-
-    //개행할 때 참고: title_part2를 예시로 인덱스 숫자[12]에다가
-    //시작 라인[248] 더하면 260나오는데 +1한 261이 개행해야할 구간임
-
-    //크기 맞추기
 
     printf("%s", line);
     return 0;
@@ -660,79 +619,66 @@ int game_over_screen()
         return 0;
     }
 
+    int printStringToScreen(char* line, const char* str, int strLength, int pos)
+    {
+        int i = 0;
+        for (i = 0; i < strLength; i++)
+        {
+             line[i + pos] = str[i];
+        }
+    }
+
+    int tap(char* line, int strLength, int pos)
+    {
+        line[strLength + pos +1] = '\n';
+    }
+
     char line[530];
 
     int i = 0;
-    while(i < 70)
+    while(i < 66)
     {
         line[i] = '@';
         i = i + 1;
     }
 
-    for (i = 70; i < 530; i++)  // 나머지 요소를 공백 문자로 초기화
+    for (i = 66; i < 530; i++)  // 나머지 요소를 공백 문자로 초기화
     {
         line[i] = ' ';
     }
 
-    char head[23] = "╭ ◜◝   ◜◝ ╮";
-    for (i = 0; i < 23; i++)  // head 배열 초기화
-    {
-        line[i + 100] = head[i];
-    }
+    //***문자열 수 잘 세야됨 안그러면 출력이 안됨..ㅠㅠ (출력 안될 시 참고)***
 
-    char face[20] = "(ㅗ ◠ ‿ ◠ ㅗ";
-    for (i = 0; i < 20; i++)  // face 배열 초기화
-    {
-        line[i + 150] = face[i];
-    }
+    printStringToScreen(line, "╭ ◜◝   ◜◝ ╮", 23, 96);
+    tap(line, 23,95);
+    printStringToScreen(line, "(ㅗ ◠ ‿ ◠ ㅗ", 20, 145);
+    tap(line, 20,145);
+    printStringToScreen(line, "╰◟ ◞ ͜ ◟ ◞╯", 24, 192);
+    tap(line, 24,192);
+    tap(line, 24,193);
+    tap(line, 24,194);
+    printStringToScreen(line, "** GAME  OVER **", 16,243);
+    tap(line, 16,243);
+    tap(line, 16,244);
+    printStringToScreen(line, "몽실이에게 조금 다정하게 대해주는 건 어떨까요?", 66,272);
+    tap(line, 66,272);
+    tap(line, 66,273);
+    tap(line, 66,274);
+    tap(line, 66,275);
+    tap(line, 66,276);
+    tap(line, 66,277);
 
-    char leg[24] = "╰◟ ◞ ͜ ◟ ◞╯";
-    for (i = 0; i < 24; i++)  // leg 배열 초기화
+    for (i = 344; i < 410; i++)  // '@' 출력
     {
-        line[i + 198] = leg[i];
-    }
-
-    char gameover[16] = "** GAME  OVER **";
-    for (i = 0; i < 16; i++) 
-    {
-        line[i + 250] = gameover[i]; //여기 꼭 변수명으로 바꿔주는거 잊지말기
-    }
-
-    char script1[66] = "몽실이에게 조금 다정하게 대해주는 건 어떨까요?";
-    for (i = 0; i < 66; i++) 
-    {
-        line[i + 278] = script1[i]; //여기 꼭 변수명으로 바꿔주는거 잊지말기
-    }
-
-    for (i = 349; i < 419; i++)  // '@' 출력
-    {   //마지막 인덱스값 +70
         line[i] = '@';
     }
 
-    line[71] = '\n';
-    line[72] = '\n';
-    line[73] = '\n';
-    line[123] = '\n';
-    line[171] = '\n';
-    line[223] = '\n'; 
-    line[224] = '\n';
-    line[225] = '\n';
-    line[266] = '\n';
-    line[267] = '\n';
-    line[345] = '\n';
-    line[346] = '\n';
-    line[347] = '\n';
-    line[348] = '\n';
-    line[349] = '\n';
+    line[67] = '\n';
+    line[68] = '\n';
+    line[69] = '\n';
+    line[70] = '\n';
     line[529] = '\0';  // line 배열의 끝을 널 문자로 종료
 
-    //공백넣고싶을 때는 시작 라인 숫자 조절.인덱스 값 잘 세야됨 안그러면
-    //이상한거 뜸
-
-    //개행할 때 참고: title_part2를 예시로 인덱스 숫자[12]에다가
-    //시작 라인[248] 더하면 260나오는데 +1한 261이 개행해야할 구간임
-
-    //크기 맞추기
 
     printf("%s", line);
     return 0;

@@ -6,6 +6,8 @@ int how_to_play();
 
 int how_to_play2();
 
+int how_to_play3();
+
 int game_start1();
 
 int choice1();
